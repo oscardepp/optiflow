@@ -15,6 +15,7 @@ Optiflow is a REST API that is a predictive inventory management system used to 
 </p>
 <p align="center"><sub><i>Figure 1. A depiction illustrating the interactions between the user, events, lambda functions and API calls involved in Optiflow.</i></sub></p>
 
+In this project, the client only interacts with the API, wihtout interacting with the S3 Bucket or the database, maintaining good client/server design. The first three GETs retrieves the existing datasets, models, and jobs present in the system. The DELETE call resets all the tables to scratch. The three POST operations do the three actions described below. THe last three GET items retrieves the jo
 
 ## Database design 
 
@@ -36,7 +37,7 @@ Train        (2)   Test         (3)   Real-y values
 
 Input hyperparameters, dataset_id of the training set. 
 XGBoost is a prebuilt image on us-east-2 that we feed into Sagemaker, along with hyperparameters provided. 
-Our API is asynchronous in nature because of the time intensive nature of training a ML task using Sagemaker. As we recall from class, server gives a response, but may take longer to give a completed response, we initiate a sagemaker job  as in Project03
+Our API is asynchronous in nature because of the time intensive nature of training a ML task using Sagemaker. As we recall from class, server gives a response, but may take longer to give a completed response, we initiate a sagemaker job. 
 
 ## 3. Poll Model Status 
 
