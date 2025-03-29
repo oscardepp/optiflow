@@ -1,6 +1,9 @@
-# Optiflow 
-
-Optiflow is a REST API that is a predictive inventory management system used to automatically train and do inference on financial datasets once uploaded. The high-level goals of this project include:  
+# Optiflow API 
+Inventory shortages and excess stock are critical challenges faced in regions with
+limited technological infrastructure, leading to increased costs, waste, and missed
+opportunities. We developed a predictive inventory management system leveraging
+AWS services for scalability, efficiency, and automation to address this, with the overall
+workflow represented in Figure 1. 
 
 - Interact with FRED API -important for economic data
 - Explore how Sagemaker works
@@ -15,8 +18,13 @@ Optiflow is a REST API that is a predictive inventory management system used to 
 </p>
 <p align="center"><sub><i>Figure 1. A depiction illustrating the interactions between the user, events, lambda functions and API calls involved in Optiflow.</i></sub></p>
 
-In this project, the client only interacts with the API, wihtout interacting with the S3 Bucket or the database, maintaining good client/server design. The first three GETs retrieves the existing datasets, models, and jobs present in the system. The DELETE call resets all the tables to scratch. The three POST operations do the three actions described below. THe last three GET items retrieves the jo
-
+Our system employs an asynchronous RESTful API architecture implemented through
+AWS API Gateway, integrating various AWS services. Key data components like
+historical inventory levels, sales data, and supply chain variables make up the input
+dataset, storing the files in S3 and information in RDS, which is organized into datasets,
+models, and jobs tables, where jobs are Sagemaker jobs defining whether the training
+or inference is done yet or not. User interactions flow through a streamlined process
+described in the next section using lambda functions to achieve these functionalities.
 ## Database design 
 
 <p align="center">
