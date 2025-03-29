@@ -4,7 +4,7 @@
 ## High-level depiction of project 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/56118e18-3bf4-498c-8ead-794d1c4b12a0" alt="highlevel" width="400"/>
+  <img src="https://github.com/user-attachments/assets/56118e18-3bf4-498c-8ead-794d1c4b12a0" alt="highlevel" width="800"/>
 </p>
 <p align="center"><sub><i>Figure 1. A depiction illustrating the interactions between the user, events, lambda functions and API calls involved in Optiflow.</i></sub></p>
 
